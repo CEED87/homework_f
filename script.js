@@ -33,113 +33,101 @@ getTotalPrice([
 
 */
 
-const getTotalPrice = (arr) => {
-  let sum = 0;
-    arr.map((el) => {
-      sum += el.quantity * el.price
-    })
-    return console.log(sum.toFixed(1)) 
-}
+// const getTotalPrice = (arr) => {
+//   let sum = 0;
+//     arr.map((el) => {
+//       sum += el.quantity * el.price;
+//     });
+//     return console.log(sum.toFixed(1)); 
+// };
 
 
-getTotalPrice([
-  { product: "Milk", quantity: 1, price: 1.50 }
-])
+// getTotalPrice([
+//   { product: "Milk", quantity: 1, price: 1.50 }
+// ]);
 
-getTotalPrice([
-  { product: "Milk", quantity: 1, price: 1.50 },
-  { product: "Cereals", quantity: 1, price: 2.50 }
-])
+// getTotalPrice([
+//   { product: "Milk", quantity: 1, price: 1.50 },
+//   { product: "Cereals", quantity: 1, price: 2.50 }
+// ]);
 
-getTotalPrice([
-  { product: "Milk", quantity: 3, price: 1.50 }
-])
+// getTotalPrice([
+//   { product: "Milk", quantity: 3, price: 1.50 }
+// ]);
 
-getTotalPrice([
-  { product: "Milk", quantity: 1, price: 1.50 },
-  { product: "Eggs", quantity: 12, price: 0.10 },
-  { product: "Bread", quantity: 2, price: 1.60 },
-  { product: "Cheese", quantity: 1, price: 4.50 }
-])
+// getTotalPrice([
+//   { product: "Milk", quantity: 1, price: 1.50 },
+//   { product: "Eggs", quantity: 12, price: 0.10 },
+//   { product: "Bread", quantity: 2, price: 1.60 },
+//   { product: "Cheese", quantity: 1, price: 4.50 }
+// ]);
 
-getTotalPrice([
-  { product: "Chocolate", quantity: 1, price: 0.10 },
-  { product: "Lollipop", quantity: 1, price: 0.20 }
-])
-
-
-
+// getTotalPrice([
+//   { product: "Chocolate", quantity: 1, price: 0.10 },
+//   { product: "Lollipop", quantity: 1, price: 0.20 }
+// ]);
 
 
 
 
 
-/**Task2 
-Напишите функцию, которая проверяет, равны ли два аргумента объекта друг другу. Верните true, если объекты равны, в противном случае верните false. 
+
+
+
+// Task2 
+// Напишите функцию, которая проверяет, равны ли два аргумента объекта друг другу. Верните true, если объекты равны, в противном случае верните false. 
 
 
 // Первый аргумент
 
-{
+let list1 = {
   name: "Benny",
   phone: "3325558745",
   email: "benny@edabit.com"
-}
+};
 
 // Второй аргумент
 
-{
+let list2 = {
   name: "Jason",
   phone: "9853759720",
   email: "jason@edabit.com"
-}
+};
 
 
+// ➞ false
 
-➞ false
-
-*/
-
-
-
-/** 
 // Первый аргумент
 
-{
+let list3 = {
   name: "Jason",
   phone: "9853759720",
   email: "jason@edabit.com"
-}
+};
 
 // Второй аргумент
 
-{
+let list4 = {
   name: "Jason",
   phone: "9853759720",
   email: "jason@edabit.com"
-}
+};
 
 
-➞ true 
+// ➞ true 
 
-
-*/
 
 let checkPar = (obj1, obj2) => {
-  let bol;
-    obj1.forEach(el1 => {
-      obj2.forEach(el2 => {
-        if (el1.name === el2.name) {
-          bol = true;
-        }
-        if (el1.name === el2) {
-          bol = true;
-        }
-      })
-    });
+  if (obj1.name === obj2.name && obj1.phone === obj2.phone && obj1.email === obj2.email) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
-  
-} 
+console.log(checkPar(list1, list2));
+console.log(checkPar(list3, list4));
+
 
 
 
@@ -178,3 +166,10 @@ expandedForm(802539) ➞ "800000 + 2000 + 500 + 30 + 9"
 
 
  */
+// let expandedForm = (num) => {
+//   num.toString().split('').map(function(e, i, a) {
+//     return e * Math.pow(10, a.length - i - 1);
+//   });
+// };
+
+// console.log(expandedForm(36543));
