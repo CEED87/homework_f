@@ -125,25 +125,8 @@ let checkPar = (obj1, obj2) => {
   }
 };
 
-console.log(checkPar(list1, list2));
-console.log(checkPar(list3, list4));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(checkPar(list1, list2));
+// console.log(checkPar(list3, list4));
 
 
 
@@ -166,10 +149,18 @@ expandedForm(802539) ➞ "800000 + 2000 + 500 + 30 + 9"
 
 
  */
-// let expandedForm = (num) => {
-//   num.toString().split('').map(function(e, i, a) {
-//     return e * Math.pow(10, a.length - i - 1);
-//   });
-// };
 
-// console.log(expandedForm(36543));
+
+let expandedForm = (num) => {
+  let arr = num.toString().split('');
+  let arr2 = [];
+  arr.map(function (el, i, arr) {
+    if (Number(el) !== 0)
+      arr2.push(el * Math.pow(10, arr.length - i - 1));
+  });
+  return arr2.join(' + ');
+};
+
+console.log(expandedForm(70304));
+console.log(expandedForm(1037903));
+console.log(expandedForm(802539));
