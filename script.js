@@ -110,23 +110,60 @@ let list3 = {
 let list4 = {
   name: "Jason",
   phone: "9853759720",
-  email: "jason@edabit.com"
+  email: "jason@edabit.com",
 };
 
 
 // ➞ true 
 
 
-let checkPar = (obj1, obj2) => {
-  if (obj1.name === obj2.name && obj1.phone === obj2.phone && obj1.email === obj2.email) {
-    return true;
+// let checkPar = (obj1, obj2) => {
+//   if (obj1.name === obj2.name && obj1.phone === obj2.phone && obj1.email === obj2.email) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+let checkPar = (arg1, arg2) => {
+  let arr = [];
+  let obj1 = Object.keys(arg1);
+  let obj2 = Object.keys(arg2);
+// Проверка объектов на равное количество ключей  
+  if (obj1.length === obj2.length) {
+    // Проверка совпадений ключей  
+    obj1.forEach((el1) => {
+      obj2.forEach((el2) => {
+        if (el1 === el2) {
+          arr.push(1);
+        }
+      });
+    });
+    // Проверка на соответствие количества одинаковых ключей количеству ключей объекта  
+    if (obj1.length === arr.length) {
+      // Проверка на соответствие ключ:зачение  
+      for (const key1 in arg1) {
+        for (const key2 in arg2) {
+          if (key1 === key2) {
+            if (arg1[key1] === arg2[key2]) {
+              arr.push(1);
+            } else {
+              arr.push(0);
+            }
+          }
+        }
+      }
+    } else {
+      return false;
+    }
   } else {
     return false;
   }
+  return arr.every(elem => elem === 1);
 };
 
-// console.log(checkPar(list1, list2));
-// console.log(checkPar(list3, list4));
+console.log(checkPar(list1, list2));
+console.log(checkPar(list3, list4));
 
 
 
@@ -144,12 +181,7 @@ expandedForm(70304) ➞ "70000 + 300 + 4"
 expandedForm(1037903) ➞ "1000000 + 30000 + 7000 + 900 + 3"
 
 expandedForm(802539) ➞ "800000 + 2000 + 500 + 30 + 9"
-
-
-
-
  */
-
 
 let expandedForm = (num) => {
   let arr = num.toString().split('');
@@ -161,6 +193,6 @@ let expandedForm = (num) => {
   return arr2.join(' + ');
 };
 
-console.log(expandedForm(70304));
-console.log(expandedForm(1037903));
-console.log(expandedForm(802539));
+// console.log(expandedForm(70304));
+// console.log(expandedForm(1037903));
+// console.log(expandedForm(802539));
